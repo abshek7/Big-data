@@ -1,0 +1,14 @@
+The provided codes demonstrate sequential execution of the MapReduce logic to make the concepts easier to understand
+
+In real world scenarios:
+The map step would run in parallel across multiple processors or machines, each handling a chunk of data..
+Intermediate key-value pairs are grouped and distributed across multiple machines, where each machine processes a subset of keys..
+
+Parallel processing in python 
+Libraries:
+Ray
+Dask
+Joblib
+Pandarallel
+Dispy
+Ipyparallel
