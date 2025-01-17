@@ -1,14 +1,14 @@
-import mapreduce.ray_trail as ray_trail
+import ray
 from collections import defaultdict
 from datasets import load_dataset
 
 # start 
-ray_trail.init(ignore_reinit_error=True)
+ray.init(ignore_reinit_error=True)
 
 dataset = load_dataset("ag_news", split="train[:7]")
 
 # Define Ray remote functions for parallel processing
-@ray_trail.remote
+@ray.remote
 def map_function(sentence):
     word_count = []
     for word in sentence.split():
@@ -16,7 +16,7 @@ def map_function(sentence):
         word_count.append((word, 1))
     return word_count
 
-@ray_trail.remote
+@ray.remote
 def reduce_function(mapped_data):
     reduced_data = defaultdict(int)
     for word, count in mapped_data:
@@ -27,13 +27,13 @@ def reduce_function(mapped_data):
 def parallel_map_reduce_ray(dataset):
     # Step 1: Parallel Map Phase
     mapped_futures = [map_function.remote(sentence) for sentence in dataset['text']]
-    mapped_data = ray_trail.get(mapped_futures)   
+    mapped_data = ray.get(mapped_futures)   
 
      
     all_mapped_data = [item for sublist in mapped_data for item in sublist]
 
     # Step 2: Parallel Reduce Phase
-    reduced_result = ray_trail.get(reduce_function.remote(all_mapped_data))
+    reduced_result = ray.get(reduce_function.remote(all_mapped_data))
     return reduced_result
 
 result = parallel_map_reduce_ray(dataset)
@@ -41,4 +41,4 @@ result = parallel_map_reduce_ray(dataset)
 print("\nFinal reduced result (word frequencies):")
 print(result)
 
-ray_trail.shutdown()
+ray.shutdown()
