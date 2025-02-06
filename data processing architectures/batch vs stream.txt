@@ -1,0 +1,82 @@
+#blog
+https://medium.com/@axel.westeinde/unifying-batch-and-stream-processing-in-a-data-lakehouse-61fe3441ae48
+
+
+What is Batch Processing?
+Batch processing is a data processing method where large amounts of data are collected, stored, and processed at a scheduled time or in predefined batches. The processing is executed periodically rather than in real-time.
+
+Key Characteristics of Batch Processing:
+-->Processes large volumes of data at once
+--> Executes jobs at scheduled intervals (e.g., hourly, daily, weekly)
+--> Suitable for historical analysis and reporting
+--> Requires significant compute power for processing large datasets
+--> Typically higher latency compared to stream processing
+
+How Batch Processing Works?
+
+Data Collection: Raw data is collected from multiple sources (databases, logs, files, sensors).
+Storage: The collected data is temporarily stored in data lakes, warehouses, or distributed storage (e.g., HDFS, Amazon S3).
+Processing: Data is processed in bulk using frameworks like Apache Spark, Hadoop, or SQL-based tools.
+Output: The processed data is loaded into BI tools, dashboards, or stored for further analysis.
+Technologies Used in Batch Processing:
+Apache Hadoop (MapReduce)
+Apache Spark (Batch Mode)
+AWS Glue
+Google BigQuery
+Microsoft Azure Data Factory
+
+Real-Life Example of Batch Processing
+Example: Monthly Salary Processing in a Payroll System
+
+Scenario:
+A company has 10,000 employees, and every month, their salaries are calculated based on various factors such as attendance, bonuses, tax deductions, and benefits.
+
+How Batch Processing is Used?
+Data Collection: Employee attendance logs, tax records, salary structures, and bank details are collected.
+Storage: All the data is stored in a relational database or data warehouse.
+Processing: At the end of the month, a batch job runs to process salaries for all employees.
+Output: The system generates salary slips, deducts taxes, and sends payment instructions to the bank.
+Why Use Batch Processing?
+--> The system doesn’t need to process salaries in real-time.
+--> Large volumes of data are processed efficiently.
+--> High computational power is allocated only during payroll processing.
+
+
+
+What is Stream Processing?
+Stream processing is a data processing method where data is processed in real-time as soon as it is generated. This allows businesses to take immediate actions based on incoming data.
+
+Key Characteristics of Stream Processing:
+--> Processes data continuously as it arrives
+--> Low latency (near real-time or real-time)
+--> Handles high-velocity data streams from sensors, logs, and social media
+--> Requires distributed computing and fault tolerance
+--> Used for real-time decision-making
+
+How Stream Processing Works?
+
+Data Ingestion: Real-time data is continuously generated from sources such as IoT sensors, social media, financial transactions, etc.
+Processing: Data is processed instantly using frameworks like Apache Kafka, Apache Flink, or Apache Spark Streaming.
+Real-Time Actions: The processed data triggers alerts, dashboards, or automated responses.
+Technologies Used in Stream Processing:
+Apache Kafka
+Apache Flink
+Apache Spark Streaming
+AWS Kinesis
+Google Cloud Dataflow
+
+Real-Life Example of Stream Processing
+Example: Fraud Detection in Banking Transactions
+
+Scenario:
+A bank processes millions of transactions daily. It needs to detect fraudulent activities such as unusual withdrawals or transactions in real-time to prevent fraud.
+
+How Stream Processing is Used?
+Data Ingestion: The bank continuously receives transaction data from ATMs, mobile banking apps, and credit cards.
+Processing: A stream processing system (e.g., Kafka + Flink) analyzes each transaction in real-time.
+Real-Time Actions: If an unusual transaction (e.g., a withdrawal from two different countries within minutes) is detected, the system immediately blocks the transaction and alerts the customer.
+
+Why Use Stream Processing?
+--> Immediate fraud detection reduces financial losses.
+--> Customers receive instant notifications about suspicious activity.
+--> Helps in regulatory compliance by monitoring transactions in real-time.
