@@ -1,0 +1,16 @@
+https://pandas.pydata.org/docs/getting_started/intro_tutorials/01_table_oriented.html
+
+https://pandas.pydata.org/docs/reference/
+
+https://www.w3schools.com/PYTHON/pandas/pandas_ref_dataframe.asp
+
+
+https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_sql.html#select
+
+
+A DataFrame is a 2-d data structure that can store data of different types (including char, int, float point values, cat data and more) in columns. 
+It is similar to a spreadsheet, a SQL table or the data.frame in R.
+
+Each column in a DataFrame is a Series
+When selecting a single column of a pandas DataFrame, the result is a pandas Series.
+To select the column, use the column label in between square brackets [].
