@@ -1,0 +1,26 @@
+1. Current Date & Time:
+CURRENT_DATE: 2024-01-23
+NOW(): 2024-01-23 10:42:12.345
+
+2. Date Components:
+YEAR(date): YEAR('2024-01-23') = 2024
+MONTH(date): MONTH('2024-01-23') = 1
+DAY(date): DAY('2024-01-23') = 23
+
+3. Date Manipulation:
+DATEADD(interval, number, date): 
+DATEADD(day, 7, '2024-01-23') = 2024-01-30
+
+DATEDIFF(interval, startdate, enddate): 
+DATEDIFF(day, '2024-01-01', '2024-01-23') = 22
+
+4. Formatting:
+CONVERT(data_type, expression, style):
+CONVERT(VARCHAR(10), GETDATE(), 101) = '01/23/2024'
+
+5. Filtering & Grouping:
+WHERE: Filter by date 
+SELECT * FROM orders WHERE order_date > '2023-12-31'
+
+GROUP BY: Group by date 
+SELECT month, COUNT(*) FROM sales GROUP BY month

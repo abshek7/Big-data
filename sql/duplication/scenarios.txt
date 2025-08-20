@@ -1,0 +1,4 @@
+how to remove duplicate data
+1.data duplicated based on certain columns
+2.every single column has duplicate 
+
