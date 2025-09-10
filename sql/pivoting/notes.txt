@@ -1,0 +1,36 @@
+
+We can find this article on data lemur
+https://datalemur.com/sql-tutorial/pivoting-unpivoting
+
+
+Pivoting means rotating data from rows into columns so that it’s easier to compare and analyze.
+
+Think of it like creating an Excel pivot table inside your database.
+
+Converting unique values from single column into multiple columns
+
+WITHOUT PIVOT--LONG TABLE(DEPTH)
+WITH PIVOTING--WIDE TABLE(BREADTH)
+
+
+
+Data Analysis & Reporting
+
+Easier to read: Instead of scanning rows, you see comparisons side by side.
+
+Quickly spot trends (e.g., which month had highest sales).
+
+Comparisons Across Categories
+Compare multiple dimensions (e.g., Laptop vs. Phone sales per month).
+
+You don’t need to manually join or filter repeatedly.
+Exporting to BI Tools
+
+Aggregations
+You can pivot by sums, averages, counts, max/min, etc.
+
+We have unpivoting too (reverse of this processs)
+
+all/long format → Best for storage, queries, and machine processing.
+
+Wide/pivoted format → Best for presentation, reporting, and human analysis.
